@@ -58,4 +58,8 @@ if ([...cells].every(cell => cell.textContent)) {
 }
 
 
+// Get a reference to the Reset button and add a click event listener
+const resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", resetGame);
+
 
