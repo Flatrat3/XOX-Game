@@ -63,3 +63,13 @@ const resetButton = document.getElementById("resetButton");
 resetButton.addEventListener("click", resetGame);
 
 
+// Reset the game
+function resetGame() {
+    cells.forEach(cell => {
+        cell.textContent = ""; // 
+        cell.style.backgroundColor = ""; 
+    });
+    currentPlayer = "X"; // Reset the current player to "X"
+    winner = null; // Reset the winner
+    document.getElementById("result").textContent = ""; 
+}
