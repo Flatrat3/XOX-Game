@@ -49,5 +49,13 @@ function checkWin(){
                 return; // Exit the function
             }
         }
-    
 }
+
+
+// Check for a draw
+if ([...cells].every(cell => cell.textContent)) {
+    document.getElementById("result").textContent = "It's a draw!"; 
+}
+
+
+
