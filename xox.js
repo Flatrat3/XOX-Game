@@ -28,3 +28,5 @@ function handleCellClick(event) {
     currentPlayer = currentPlayer === "X" ? "O" : "X"; //Switch players
   }
 }
+
+
