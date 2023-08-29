@@ -31,11 +31,23 @@ function handleCellClick(event) {
 
 // Check for a win or a draw
 function checkWin(){
-    const winnigCombos =
+    const winningCombos =
         [
             [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
             [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
             [0, 4, 8], [2, 4, 6] // Diagonals
         ]
-    ;
+    
+        for (const combo of winningCombos) { // Loop through winning combinations
+            const [a, b, c] = combo; // Destructure the combination into individual cells
+            if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent) {
+                cells[a].style.backgroundColor = "green"; // Highlight the winning cells
+                cells[b].style.backgroundColor = "green";
+                cells[c].style.backgroundColor = "green";
+                winner = cells[a].textContent; // 
+                document.getElementById("result").textContent = `${winner} won!`; // Display the winner
+                return; // Exit the function
+            }
+        }
+    
 }
